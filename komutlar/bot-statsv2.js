@@ -44,7 +44,7 @@ exports.conf = { // Özel ayarları belirtiyoruz.
 }
 
 exports.help = { // Ana ayarları belirtiyoruz.
-	name: 'botstats', // Komutu belirtiyoruz.
+	name: 'botbilgi', // Komutu belirtiyoruz.
 	aciklama: 'Bot Statslarını Gösterir.', // Yardımda gözüken açıklamayı belirtiyoruz.
 	kullanim: 'botstats' // Yardımda gözükecek kullanımı belirtiyoruz.
 }

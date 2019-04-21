@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
   
   let mesaj = args.slice(0).join(' ');
 if (mesaj.length < 1) return message.channel.send('Birşey Yazmalısınız');
-  if (message.guild.id == "297457504328220673") return;
+  if (message.guild.id == "331834706393825280") return;
 
   message.delete();
 

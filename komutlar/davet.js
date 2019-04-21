@@ -8,10 +8,10 @@ exports.run = (client, message) => {
     .setAuthor(message.author.username, message.author.avatarURL)
   .setColor("RANDOM")
   .setDescription("**Bot yapımıcısı:** goktug#3131")
-  .setFooter('GoktugBot', client.user.avatarURL)
+  .setFooter('Linda BOT', client.user.avatarURL)
   .setThumbnail("")
-  .addField("» Linkler", `[Botu Ekle](https://discordapp.com/oauth2/authorize?client_id=491624639957696512&scope=bot&permissions=1073217023)`+ "**\n**"+`[Destek Sunucusu](https://discord.gg/ygazTSf)`, false)
-  .setURL('https://discordapp.com/oauth2/authorize?client_id=491624639957696512&scope=bot&permissions=1073217023')
+  .addField("» Linkler", `[Botu Ekle](https://discordapp.com/oauth2/authorize?client_id=560869997933756439&scope=bot&permissions=1073217023)`+ "**\n**"+`[Destek Sunucusu](https://discord.gg/8dqXdqg`, false)
+  .setURL('https://discordapp.com/oauth2/authorize?client_id=560869997933756439&scope=bot&permissions=1073217023')
   .setThumbnail(client.user.avatarURL);
 
   message.channel.send({embed});

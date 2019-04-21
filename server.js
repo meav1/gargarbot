@@ -14,8 +14,12 @@ const queue = new Map();
 const moment = require('moment');
 const economy = require('discord-eco');
 const Jimp = require('jimp');
+const googleTTS = require('google-tts-api'); //konuşturmak için
+const Opus = require('node-opus'); //konuşturmak için
 
 require('./util/eventLoader')(client);
+
+
 
 var prefix = ayarlar.prefix;
 
@@ -108,8 +112,8 @@ client.on('message' , msg => {
             .addField("!!!kick <isim> <sebep>", "Kullanıcıyı Sunucudan Atar.")
             .addField("!!!uyar"               , "Belirlediğin Kullanıcıyı Uyarır : `mod-log`")
             .addField("!!!mute <isim> <sebep>", "Belirlediğiniz Kullanıcıya Konuşma Yasağı Getirir Süreli.")
-            .addField("!!!takmaad <isim>", "GoktugBot'un Kullanıcını Adını Değiştirir.")
-            .addField("!!!kurulum", "GoktugBot ile ilgili Tüm Metin Kanallarını Otomatik Şekilde Oluşturur.")
+            .addField("!!!takmaad <isim>", "Linda BOT 'un Kullanıcını Adını Değiştirir.")
+            .addField("!!!kurulum", "Linda BOT ile ilgili Tüm Metin Kanallarını Otomatik Şekilde Oluşturur.")
             .addField("!!!otorol <rol> <kanal>",  "Kullanıcıların Sunucunuza Girdiğinde Hangi Rolü Verileceğini Belirlersiniz")
             .addField("!!!otorolkapat", "Oto Rol Özelliğini Kapatırsınız.")
             .addField("!!!otorolmsgkapat", "Oto Rol'den Gelen Mesajları Kapatırsınız.")
@@ -137,9 +141,59 @@ client.on('message' , msg => {
             .addField("!!!dur", "Çalan Şarkıyı Duraklatır.")
             .addField("!!!devamet", "Duraklatılmış Şarkıyı Devam Eder")
             .addField("!!!liste", "Sıraya Eklenmiş Şarkıları Gösterir.")
-            .addField("!!!devam", "GoktugBot'un Kullanıcını Adını Değiştirir.")
-            .addField("!!!çalan", "GoktugBot'un Kullanıcını Adını Değiştirir.")
+            .addField("!!!devam", "Çalan şarkıyı durdurduysanız devam etirir")
+            .addField("!!!çalan", "Botun çaldığı şarkıyı söyler.")
 
+
+            
+            .setColor("RANDOM")
+        
+        return msg.channel.sendEmbed(embed)
+    }
+  });
+
+client.on('message' , msg => {
+   if (msg.content.toLowerCase() === prefix + "nsfw") {
+        const embed = new Discord.RichEmbed()
+            .addField(" ◢◤◢◤ +18 NSFW Yardım ◢◤◢◤", "NSFW Komutları")
+            .addField("!!!p-nsfw ", "+18 Foto/GIF paylaşır")
+            .addField("!!!pussy-nsfw", "+18 Foto/GIF paylaşır")
+            .addField("!!!pgif-nsfw", "+18 Foto/GIF paylaşır")
+            .addField("!!!ass-nsfw", "+18 Foto/GIF paylaşır")
+            .addField("!!!hentai-nsfw", "+18 Foto/GIF paylaşır")
+            .addField("!!!pgif", "+18 Foto/GIF paylaşır")
+
+
+
+            
+            .setColor("RANDOM")
+        
+        return msg.channel.sendEmbed(embed)
+    }
+  });
+
+client.on('message' , msg => {
+   if (msg.content.toLowerCase() === prefix + "sunucukomutları") {
+        const embed = new Discord.RichEmbed()
+            .addField(" ◢◤◢◤ Sunucu Komutları Yardım ◢◤◢◤", "Sunucu Komutları")
+            .addField("!!!mod-log ", "Moderatör log kanalını belirlersiniz")
+            .addField("!!!ayarlamalı-saas", "SA ve AS komutlarına duyarlı")
+            .addField("!!!ayarlar", "Küfür ve Reklam engeli kontrolü")
+            .addField("!!!disco", "Sunucuda rol değiştiren rol belirlersiniz.")
+            .addField("!!!emojiler", "Sunucudaki mevcut emojileri gösterir")
+            .addField("!!!kurulum", "Bir çok oda kurar")
+            .addField("!!!küfür-engel", "Küfür filterisini açık kapatır.")
+            .addField("!!!log-ayarla", "Log kanalını ayarlarsınız")
+            .addField("!!!otorol", "Otorol komutunu açarsınız")
+            .addField("!!!otorolsıfırla", "Otorol komutunu sıfırlar")
+            .addField("!!!reklam-taraması", "Sunucudaki reklam oynuyor yazan kişileri bulur.")
+            .addField("!!!resimlihoşgeldin", "Hoşgeldin kanalında resimli hoşgeldin güle güle paylaşır.")
+            .addField("!!!roller", "Sunucudaki rolleri gösterir.")
+            .addField("!!!sayaç", "Sayaç odası seçerek sayacı açarsınız.")
+            .addField("!!!sunucubilgi", "Sunucu hakkında bilgi verir.")
+            .addField("!!!sunucudavet", "Sunucunun kalıcı davet linkini oluşturur")
+            .addField("!!!sunucuduyuru", "Sunucunun duyuru kanalında duyuru yapar.")
+            .addField("!!!sunucuresmi", "Sunucunun resmini paylaşır.")
 
             
             .setColor("RANDOM")
@@ -158,6 +212,27 @@ client.on('message' , msg => {
             .addField("!!!mccombo <KULLANICI>", "Minecraft Oyuncusunun Cbomo Oluşumunu Gösterir.")
           
        
+            
+            .setColor("RANDOM")
+        
+        return msg.channel.sendEmbed(embed)
+    }
+  });
+
+client.on('message' , msg => {
+   if (msg.content.toLowerCase() === prefix + "botkomutları") {
+        const embed = new Discord.RichEmbed()
+            .addField(" ◢◤◢◤ BOT Yardım ◢◤◢◤", "BOT Komutları")
+            .addField(" ￼ ￼￼ ￼ ￼ ￼ ￼ ￼￼ ￼ ￼ ￼"," ￼￼ ￼")
+            .addField("!!!bilgi", "Bot hakkında bilgi verir")
+            .addField("!!!botbilgi", "Botun istatistiklerini göster")
+            .addField("!!!istatistik", "Botun istatistiklerini göster")
+            .addField("!!!reklam-taraması", "Sunucudaki oynuyor yerinde reklam yapanları yakalar.")
+            .addField("!!!reboot", "Botu yeniden başlatır [SAHİP'e özel].")
+            .addField("!!!reload", "Komutu yeniden yükler [SAHİP'e özel]")
+        
+
+        
             
             .setColor("RANDOM")
         
@@ -278,13 +353,18 @@ client.on('message', async msg => {
   }
 });
 
+client.on('message', msg => {
+  if (msg.content === prefix + 'fiyat') {
+    msg.reply('AYLIK OLARAK SADECE 5TL İletişim : Meav#8961 !');
+  }
+});
 
 client.on("message", message => {
     if (message.content.toLowerCase() === prefix + 'reset') {
-    if (message.author.id !== "297457504328220673") {
+    if (message.author.id !== "331834706393825280") {
       message.reply('Bu Komutu Sadece Sahibim Kullanabilir!!!');
       } else {
-      message.channel.sendMessage(`Yenileniyorum Yiğenim!!!`).then(msg => {
+      message.channel.sendMessage(`Yenileniyorum!!!`).then(msg => {
       console.log(`Yeniden Başlıyorum`);
       process.exit(0);
     })
@@ -460,7 +540,7 @@ client.on("guildMemberAdd", async member => {
     .setTitle('Otorol Sistemi')
     .setDescription(`:loudspeaker: :inbox_tray:  @${member.user.tag}'a Otorol Verildi `)
 .setColor("GREEN")
-    .setFooter("Goktug", client.user.avatarURL);
+    .setFooter("Linda", client.user.avatarURL);
 
   if (!giriscikis[member.guild.id].kanal) {
     return;
@@ -697,7 +777,7 @@ let rrrsembed = new Discord.RichEmbed()
 .addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
 .addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
 .addField("Sunucudaki Kişi Sayısı:", guild.invite)
- client.channels.get('533892060780953600').send(rrrsembed);
+ client.channels.get('569645054423990273').send(rrrsembed);
 }); 
        
 
@@ -710,7 +790,7 @@ let rrsembed = new Discord.RichEmbed()
 .addField("Sunucu sahibi", guild.owner)
 .addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
 .addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
- client.channels.get('533892060780953600').send(rrsembed);
+ client.channels.get('569645054423990273').send(rrsembed);
 }); 
 
 
@@ -719,7 +799,7 @@ client.on('message', async msg => {
    if (msg.channel.type === "dm") return;
   var srol = await db.fetch(`discorole_${msg.guild.id}`)
   var role = msg.guild.roles.find(e => e.name === `${srol}`);
-  msg.channel.send(`<a:onay:531012793080610816> | **Artık ${srol} sürekli renk değiştirecek!**`)
+  msg.channel.send(`:ballot_box_with_check:| **Artık ${srol} sürekli renk değiştirecek!**`)
   setInterval(() => {
       msg.guild.roles.find(s => s.name === srol).setColor("RANDOM")
       }, 5000);
@@ -840,3 +920,4 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     
   }
 });
+

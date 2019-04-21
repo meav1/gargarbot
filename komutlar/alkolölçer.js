@@ -14,7 +14,7 @@ exports.conf = {
 }
 
 exports.help = {
-  name: 'alkol',
+  name: 'alkolölçer',
   aciklama: 'Alkol Kullanma Oranını Ölçer',
   kullanim: 'alkol'
 };

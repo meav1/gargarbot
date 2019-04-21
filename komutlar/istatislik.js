@@ -50,5 +50,5 @@ exports.conf = {
     name: 'istatistik',
     category: "bot",
     description: 'Botun istatistiklerini gösterir.',
-    usage: 'r?istatistik'
+    usage: 'istatistik'
   };

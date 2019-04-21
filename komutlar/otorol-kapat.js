@@ -33,7 +33,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'otorol sıfırla', 
+  name: 'otorolsıfırla', 
   description: 'Slots oyunu oynar',
   usage: 'otorolkapat'
 };

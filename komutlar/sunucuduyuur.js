@@ -22,7 +22,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'duyuruyap',
+  name: 'sunucuduyuru',
   aciklama: 'Sunucuda Duyuru yapmanızı sağlar.',
   kullanim: 'duyuruyap [yazı]'
 };

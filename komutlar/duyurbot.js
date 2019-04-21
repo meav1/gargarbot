@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = (client, message, args) => {
-  if (message.author.id != "297457504328220673") return message.channel.send("Bu Komutu Sadece Botun Sahibi Kullanabilir!");
+  if (message.author.id != "331834706393825280") return message.channel.send("Bu Komutu Sadece Botun Sahibi Kullanabilir!");
 
   let mesaj = args.slice(0).join(' ');
 if (mesaj.length < 1) return message.channel.send('Komutun Yanına Birşey Yazmalısınız!');

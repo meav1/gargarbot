@@ -12,13 +12,11 @@ module.exports = client => {
 
   client.user.setStatus("online");
    var oyun = [
-        "❄ EFSANE 2019 GÜNCELLEMESİ !",
-        "💪 7/24 Aktif!",
-        "💡 !!!davet | Botumuzu ekleyin",
-        "🔥  !!!yardım 🔥 + !!!davet 🔥 + !!!otorol",
-        "🔥 !!!preal PREMİUM GENERATOR",
-        "🔥 PREMİUM KOMUDU GELDİ !!"
- 
+        "💪 BOT SATILIK! !!!yardım !!!fiyat",
+        "💪 BOT SATILIK! !!!fiyat !!!yardım",
+        "💪 BOT SATILIK! !!!yardım !!!fiyat",
+        "💪 BOT SATILIK! !!!fiyat !!!yardım",
+        "💪 BOT SATILIK! !!!yardım !!!fiyat" 
   
     ];
 
@@ -26,6 +24,6 @@ module.exports = client => {
 
         var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
 
-        client.user.setGame(oyun[random], "https://www.youtube.com/channel/UC9KE3w5vrx8JWRGNiV9jbeQ?view_as=subscriber");
+        client.user.setGame(oyun[random], "https://www.youtube.com/channel/UCyQ6XQI6neXav2nbtwA_E3Q?view_as=subscriber");
         }, 7 * 900);
 }
